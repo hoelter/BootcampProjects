@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Record";
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<h2>Record</h2> 
+
+<script src="//www.WebRTC-Experiment.com/RecordRTC.js"></script>
+
+@if (ViewBag.RecordFailure != null)
+{
+    @Html.Raw(ViewBag.RecordFailure)
+}
+<p style="color:red">test</p>
+
+
+<button id="start-recording">Record</button>
+<button id="stop-recording">Stop</button>
+<button id="submit-recording">Submit</button>
+<script>
+    var btnStartRecording = document.getElementById('start-recording');
+    var btnStopRecording = document.getElementById('stop-recording');
+    var btnSubmitRecording = document.getElementById('submit-recording');
+    var recordRTC;
+    var fileType = 'audio';
+    var fileName = 'meeting.wav';
+    var recordedBlob;
+
+    function successCallback(stream)
+    {
+        var options = {
+            recorderType: StereoAudioRecorder,
+            ////: 'audio/ogg',
+            bitsPerSecond: 128000,
+            //numberOfAudioChannels: 1
+            leftChannel: true
+        };
+        recordRTC = RecordRTC(stream, options);
+        recordRTC.startRecording();
+    }
+
+    function errorCallback(error) {
+        alert(JSON.stringify(error));
+    }
+
+    var mediaConstraints = { video: false, audio: true };
+
+    btnStartRecording.onclick = function () {
+        navigator.getUserMedia(mediaConstraints, successCallback, errorCallback);
+        //recordRTC.startRecording();
+        console.log("start record pressed");
+    }
+
+    btnStopRecording.onclick = function () {
+        recordRTC.stopRecording(function (audioURL) {
+            //audio.src = audioURL;
+            recordedBlob = recordRTC.getBlob();
+            console.log("stop record pressed");
+            //recordRTC.getDataURL(function (dataURL) { });
+        });
+    }
+
+    btnSubmitRecording.onclick = function () {
+        var formData = new FormData();
+        formData.append(fileType + '-filename', fileName);
+        formData.append(fileType + '-blob', recordedBlob);
+
+        xhr('/Record/Recorded', formData, function (fileName) {
+            window.open(location.href + 'uploads/' + fileName);
+        });
+
+        function xhr(url, data, callback) {
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == 200) {
+                    callback(location.href + request.responseText);
+                }
+            };
+            request.open('POST', url);
+            request.send(data);
+        }
+        console.log("submit record pressed");
+    }
+</script>

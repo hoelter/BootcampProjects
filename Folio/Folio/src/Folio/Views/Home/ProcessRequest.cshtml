@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "ProcessRequest";
+}
+
+<!DOCTYPE html>
+@model Folio.Models.Email
+
+<html>
+<head>
+    <title>Contact Email</title>
+</head>
+<body>
+    @if (@Model.ErrorMessage == "" || Model.ErrorMessage == null)
+    {
+        <p>Your email message has been sent to @Model.ContactName;</p> <br/><br/><br/>
+        <p>Subject: @Model.EmailSubject</p> <br/><br/>
+        <p>Body: @Model.EmailBody</p>
+
+
+    }
+    else {
+        <p><b>Message delivery failed to @Model.ContactName.</b></p><br/>
+        <p>Please check that your name (@Model.CustomerName) and email address (@Model.CustomerEmail) are filled out correctly.</p><br/>
+        <p>Thank you for your patience.</p>
+    }
+</body>
+</html>
+

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block form %}
+		<div class = "form">
+			<div id="search">
+			<form action="/search" method="post">
+				<fieldset class="clearfix">
+					<input type="search" name="search" value="What are you looking for?" onBlur="if(this.value=='')this.value='What are you looking for?'" onFocus="if(this.value=='What are you looking for?')this.value='' ">
+					<input type="submit" value="Search" class="button">
+				</fieldset>
+			</form>
+			</div>
+		</div>
+{% endblock %}
+
+{% block main_content %}
+{% if searched == True %}
+<table class="searchResults">
+	<thead>
+	<tr>
+		<th class="leftcol">{{ query_name }}</th>
+		<th class="rightcol">Score</th>
+	</tr>
+	</thead>
+	<tbody>
+    {% for item in results %}
+	<tr>
+<!-- 	replace {{ query url with whatever it's called in the database }} -->
+		<td class="leftcol">{{ item[0] }}</td>
+		<td class="rightcol">{{ item[1] }}</td>
+	</tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<br>
+<div class="mission">
+<em>Our Mission</em>
+<p>We set out with a goal to use Natural Language Processing(NLP) to find connections between a Topics with a common base idea. In our case we were looking at Computer Science and from there attempting to find ideas connected to our subject.</p>
+<em>The Why</em>
+<p>Software engineering is a massive area with a lot of jargon to go along with it. This page allows you to find the similarities of an area based how relative to the subject the user searches for.</p>
+<em>The How</em>
+<p>Taking a large collection of Wikipedia articles, we scrapped through the pages and tallied up the relationship between two topics. We used the Wikipedia API, Gensim API, MongoDB, and Flask to achieve our goal. Gensim did most of the heavy lifting in this project, tokenizing the pages and giving them a score that was stored up in a MongoDB. Flask is framework of Python that allows us to add the functionality of Python within HTML webpages.</p>
+</div>
+{% endif %}
+{% endblock %}

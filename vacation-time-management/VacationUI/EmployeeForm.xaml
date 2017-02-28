@@ -1,0 +1,65 @@
+<Window x:Class="VacationUI.EmployeeForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VacationUI"
+        mc:Ignorable="d"
+        Title="Vacation Manager 1.0  /  Vacation Request" Height="400" Width="700">
+
+    <Window.Resources>
+        <ImageBrush ImageSource="/VacationLib;component/Images/VacationImage1.jpg" x:Key="VacationImage"/>
+
+
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Border>
+            <Border.Background>
+                <ImageBrush ImageSource="work-vacation-policy-pop_3122 - Copy (8) - Copy.jpg"/>
+            </Border.Background>
+            <Border.BindingGroup>
+                <BindingGroup/>
+            </Border.BindingGroup>
+        </Border>
+        <Viewbox Height="200" Width="275">
+            <Calendar x:Name="MonthlyCalendar" FontSize="14" FontFamily="Segoe WP Black" DisplayMode="Month" SelectionMode="MultipleRange"/>
+        </Viewbox>
+        <Button x:Name="button" FontSize="14" FontFamily="Segoe WP Black" Content="Submit Vacation Request" Height="40" Margin="34,0,472,139" VerticalAlignment="Bottom" RenderTransformOrigin="0.508,0.025" Click="button_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <DatePicker x:Name="Start" FontSize="14" FontFamily="Segoe WP Black" Margin="488,144,52,0" VerticalAlignment="Top" SelectedDateChanged="Start_SelectedDateChanged"/>
+        <Label x:Name="label1" FontSize="14" FontFamily="Segoe WP Black" Content="Vacation Days Remaining:" HorizontalAlignment="Left" Margin="26,113,0,0" VerticalAlignment="Top" Height="26" Width="194" Foreground="Black" Background="#FFBBBBBB"/>
+        <Label x:Name="label2" FontSize="14" FontFamily="Segoe WP Black" Content="Select Start Date:" HorizontalAlignment="Left" Margin="488,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.444,-4.577" Height="26" Width="152" Foreground="Black" Background="#FFBBBBBB"/>
+        <Label x:Name="label3" Content="" HorizontalAlignment="Left" Margin="85,0,0,60.04" VerticalAlignment="Bottom" Height="25.96" Width="10" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="278,285,0,0" TextWrapping="Wrap" Text="{Binding SelectedDate, ElementName=MonthlyCalendar}" VerticalAlignment="Top" Height="54" Width="127"/>
+        <DatePicker x:Name="End" FontSize="14" FontFamily="Segoe WP Black" HorizontalAlignment="Left" Margin="488,218,0,0" VerticalAlignment="Top" Width="152" SelectedDateChanged="End_SelectedDateChanged"/>
+        <Label x:Name="label" FontSize="14" FontFamily="Segoe WP Black" Content="Select End Date:" HorizontalAlignment="Left" Margin="488,187,0,0" VerticalAlignment="Top" Width="152" Foreground="Black" Background="#FFBBBBBB"/>
+        <Label x:Name="DaysAmount"  Content="{Binding}" HorizontalAlignment="Left" Margin="278,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.825,1.277"/>
+        <Button x:Name="Back" Content="Back" FontSize="14" FontFamily="Segoe WP Black" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click" BorderBrush="#FFBBBBBB">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="AvailableVacationDays" FontSize="14" FontFamily="Segoe WP Black" Content="0" HorizontalAlignment="Left" Margin="85,151,0,0" VerticalAlignment="Top" Width="54" Background="#FFBBBBBB"/>
+        <!--<Label x:Name="PendingVacationDates" FontSize="14" FontFamily="Segoe WP Black" Content="Pending Vacation Dates:" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Height="28" Width="194" Background="#FFAAAAAA"/>
+        <Label x:Name="ApprovedVacationDates" FontSize="14" FontFamily="Segoe WP Black" Content="Approved Vacation Dates:" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Height="28" Width="194" Background="#FFB2B1B1"/>
+        <ComboBox x:Name="PendingDates" HorizontalAlignment="Left" Margin="45,220,0,0" VerticalAlignment="Top" Width="120" Height="28"/>
+        <ComboBox x:Name="ApprovedDates" HorizontalAlignment="Left" Margin="45,146,0,0" VerticalAlignment="Top" Width="120" Height="28"/>-->
+    </Grid>
+</Window>

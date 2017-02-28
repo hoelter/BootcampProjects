@@ -1,0 +1,159 @@
+﻿@model Folio.ViewModels.MonteCarlo.MonteCarloViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Monte Carlo Simulation</h2>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-controller="MonteCarlo" asp-action="Index" method="post" class="form-horizontal" role="form">
+            <div asp-validation-summary="ValidationSummary.All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AnnualContribution" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="AnnualContribution" class="form-control" />
+                    <span asp-validation-for="AnnualContribution" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="PreferredRetirementAge" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="PreferredRetirementAge" class="form-control" />
+                    <span asp-validation-for="PreferredRetirementAge" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstimatedRetirementSpan" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="EstimatedRetirementSpan" class="form-control" />
+                    <span asp-validation-for="EstimatedRetirementSpan" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnnualRetirementIncomeDraw" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="AnnualRetirementIncomeDraw" class="form-control" />
+                    <span asp-validation-for="AnnualRetirementIncomeDraw" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <canvas id="myChart" width="600" height="400"></canvas>
+
+        @if (Model.MonteCarloAvgResults != null)
+        {
+
+            <script>
+    var chartLabels = []
+    var MinPath = []
+    var AvgPath = []
+    var MaxPath = []
+    @foreach(var label in Model.ageSpan)
+    {
+    <text>
+    chartLabels.push('@label');
+    </text>
+    }
+    @foreach (decimal value in Model.MonteCarloMinResults)
+    {
+        if (value < 0)
+        {
+           @:MaxPath.push(0);
+        } else
+        {
+    <text>
+
+    MinPath.push(@value);
+    </text>
+        }
+    }
+    @foreach (decimal value in Model.MonteCarloAvgResults)
+    {
+        if (value < 0)
+        {
+           @:AvgPath.push(0);
+        } else
+        {
+    <text>
+        AvgPath.push(@value);
+    </text>
+        }
+    }
+
+    @foreach(decimal value in Model.MonteCarloMaxResults)
+    {
+        if(value < 0)
+        {
+           @:MaxPath.push(0);
+                } else
+        {
+
+       <text>
+    MaxPath.push(@value);
+    </text>
+        }
+
+    }
+
+    var lineChartData =
+    {
+        labels: chartLabels,
+        datasets:
+         [
+            {
+                label: "Minimum Path",
+                fillColor: "rgba(220,220,220,0.2)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: MinPath
+            },
+            {
+                label: "Average Path",
+                fillColor: "rgba(151,187,205,0.2)",
+                strokeColor: "rgba(151,187,205,1)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                data: AvgPath
+            },
+            {
+                label: "Maximum Path",
+                fillColor: "rgba(151,187,205,0.2)",
+                strokeColor: "rgba(151,187,205,1)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                data: MaxPath
+            }
+         ]
+    }
+    window.onload = function () {
+        var ctx = document.getElementById("myChart").getContext("2d");
+        window.myLine = new Chart(ctx).Line(lineChartData, {
+            responsive: true,
+            
+        });
+    }
+            </script>
+        }
+    </div>
+</div>
+
+<hr />
+
+

@@ -1,0 +1,24 @@
+﻿<Window x:Class="VacationUI.EmployeeMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VacationUI"
+        mc:Ignorable="d"
+        Title="Vacation Manager 1.0  /  EmployeeMenu" Height="250" Width="500" >
+    <Window.Resources>
+        <ImageBrush ImageSource="/VacationLib;component/Images/VacationImage1.jpg" x:Key="VacationImage"/>
+
+
+    </Window.Resources>
+    <Grid>
+        <Border Background="{StaticResource VacationImage}"/>
+
+        <Button x:Name="exitToLogin" FontSize="14" FontFamily="Segoe WP Black" Content="Exit" HorizontalAlignment="Left" Margin="402,15,0,0" VerticalAlignment="Top" Width="70" Click="exitToLogin_Click" BorderBrush="White"/>
+        <Button x:Name="vacationRequest" FontSize="14" FontFamily="Segoe WP Black" Content="Submit Vacation Request" HorizontalAlignment="Left" Margin="158,151,0,0" VerticalAlignment="Top" Width="181" RenderTransformOrigin="-0.267,-0.5" Height="25" Click="vacationRequest_Click" BorderBrush="White"/>
+        <!--<Button x:Name="Options" FontSize="14" FontFamily="Segoe WP Black" Content="Options" HorizontalAlignment="Left" Margin="23,15,0,0" VerticalAlignment="Top" Width="75" Height="23" BorderBrush="White"/>-->
+        <Label x:Name="Countdown" Content="Countdown till next vacation!!!!!" HorizontalAlignment="Left" Margin="90,60,0,0" VerticalAlignment="Top" Width="311" FontFamily="Segoe WP Black" FontSize="18.667" BorderThickness="10" Foreground="#FFFB0000" Background="White" BorderBrush="#FF643737"/>
+        <TextBox x:Name="NextVacationBox" FontSize="14" FontFamily="Segoe WP Black" HorizontalAlignment="Left" Height="26" Margin="167,120,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="164"/>
+
+    </Grid>
+</Window>

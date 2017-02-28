@@ -1,0 +1,293 @@
+2d computer graphics
+3d computer graphics
+abstract syntax tree
+abstraction (computer science)
+accounting software
+ada (programming language)
+addressing mode
+agile software development
+algorithm
+antipattern
+application framework
+application programming interface
+application software
+artificial neural network
+ascii
+aspect-oriented programming
+assembly language
+assertion (computing)
+automata theory
+automotive software
+avionics software
+backward compatibility
+basic
+bcpl
+berkeley software distribution
+beta test
+boolean logic
+browser extension
+business software
+c (programming language)
+c sharp (programming language)
+c++
+cad
+canonical model
+capability maturity model
+capability maturity model integration
+cascading style sheets
+central processing unit
+cobol
+code coverage
+cohesion (computer science)
+compiler
+complexity
+computation
+computational complexity theory
+computer
+computer architecture
+computer bug
+computer file
+computer graphics
+computer model
+computer multitasking
+computer program
+computer programming
+computer science
+computer software
+computer-aided design
+computer-aided manufacturing
+concurrent programming
+configuration management
+coupling (computer science)
+cyclomatic complexity
+data structure
+database
+data-structured language
+dead code
+debugging
+decision table
+declarative programming
+design pattern (computer science)
+development stage
+device driver
+disassembler
+disk image
+domain-specific language
+eeprom
+electronic design automation
+embedded system
+engineering
+engineering model (page does not exist)
+enterprise architecture
+eprom
+even-odd rule
+executable
+expert system
+extreme programming
+fault-tolerant software
+fifo (computing and electronics)
+file system
+filename extension
+finite state machine
+firmware
+foobar
+formal methods
+forth (programming language)
+fortran
+forward compatibility
+functional decomposition
+functional design
+functional programming
+game development
+game programming
+game tester
+graphical user interface
+gtk+
+hierarchical database
+high-level language
+hoare logic
+html
+human–computer interaction
+hyperlink
+hyper-threading
+ieee software
+imperative programming
+information engineering
+information retrieval
+information system
+information systems
+information technology
+instruction set
+integration testing
+interactive programming
+interface description language
+intermediate language
+international organization for standardization
+interpreter (computing)
+invariant (computer science)
+iso 9000
+iso 9001
+iso 9660
+iso image
+iso/iec 12207
+iterative development
+java (programming language)
+java modeling language
+java virtual machine
+javascript
+jquery
+kernel (computer science)
+knowledge management
+level design
+level designer
+lifo (computing)
+linux
+list of computer term etymologies
+list of programming languages
+literate programming
+machine code
+machine language
+mainframe computer
+measurement software
+medical informatics
+medical software
+mesh networking
+metadata (computing)
+metasyntactic variable
+microcode
+microprogram
+microsoft windows
+minicomputer
+mips architecture
+multi-paradigm programming language
+nesc
+neural network software
+numerical analysis
+object code
+object database
+object-oriented analysis and design
+object-oriented programming
+ontology (computer science)
+opcode
+open implementation
+open-source software
+operating system
+packet writing
+pair programming
+parallax scrolling
+pascal (programming language)
+p-code machine
+perl
+php
+placeholder name
+post-object programming
+privacy engineering
+procedural programming
+processor register
+program specification
+programming language
+programming paradigm
+programming tool
+project lifecycle
+proprietary software
+pygame
+python (programming language)
+qt (toolkit)
+query optimizer
+queueing theory
+rapid application development
+rational unified process
+real-time operating system
+refactoring
+reflection (computer science)
+regression testing
+relational database
+release to manufacturing
+reliability (engineering)
+requirement
+requirements analysis
+revision control
+robotics
+scripting language
+second-system effect
+signal analysis
+simulation
+software
+software architecture
+software bloat
+software brittleness
+software componentry
+software configuration management
+software construction
+software deployment
+software design
+software design pattern
+software development
+software development cycle
+software development process
+software documentation
+software engineer
+software engineering
+software engineering economics
+software engineering management
+software framework
+software maintenance
+software metric
+software modelling
+software project management
+software prototyping
+software quality
+software quality assurance
+software release life cycle
+software testing
+source code
+source lines of code
+specification language
+spice (iso15504)
+sprite (computer graphics)
+sql
+stack (data structure)
+standard cmmi assessment method for process improvement
+standard data model
+static code analysis
+static single assignment form
+statistical package
+string (computer science)
+structured programming
+structured query language
+subroutine
+supercomputer
+syntax (programming languages)
+system development life cycle
+system testing
+systems analyst
+systems architect
+systems design
+systems engineering
+tcl
+texture mapping
+theoretical computer science
+theory of computation
+think aloud protocol
+thread (computer science)
+threaded code
+three-address code
+timeboxing
+tinyos
+ucsd p-system
+unix
+usability
+usability testing
+user interface
+video game
+virtual finite state machine
+visual basic
+waterfall model
+web crawler
+web search engine
+wiki
+windows vista
+world wide web
+xerox parc
+xhtml
+z notation

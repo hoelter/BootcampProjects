@@ -1,0 +1,652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7B28C1D1-B43D-4C47-B89F-43EAC8B739D7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Powwow</RootNamespace>
+    <AssemblyName>Powwow</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CUETools.Codecs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdPartyDLL\CUETools.Codecs.dll</HintPath>
+    </Reference>
+    <Reference Include="CUETools.Codecs.FLAKE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdPartyDLL\CUETools.Codecs.FLAKE.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Salesforce.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f7864e53fb79388, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeveloperForce.Force.1.2.3\lib\Salesforce.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Salesforce.Force, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f7864e53fb79388, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeveloperForce.Force.1.2.3\lib\Salesforce.Force.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RecordController.cs" />
+    <Compile Include="Controllers\RecordingsController.cs" />
+    <Compile Include="DataContexts\ApplicationDbContext.cs" />
+    <Compile Include="DataContexts\RecordingsDb.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ControllerHelper.cs" />
+    <Compile Include="Helpers\EventHelper.cs" />
+    <Compile Include="Logic\CUEToolsConverter.cs" />
+    <Compile Include="Logic\IntrepreterDirector.cs" />
+    <Compile Include="Logic\SpeechToTextGoogleAPI.cs" />
+    <Compile Include="Migrations\201602011505108_initial.cs" />
+    <Compile Include="Migrations\201602011505108_initial.Designer.cs">
+      <DependentUpon>201602011505108_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Recordings\AudioBinary.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Recordings\AudioTypes\AudioType.cs" />
+    <Compile Include="Models\Recordings\Enums.cs" />
+    <Compile Include="Models\Recordings\Recording.cs" />
+    <Compile Include="Models\ViewModels\RecordingTargetSelection.cs" />
+    <Compile Include="Models\Recordings\RecordingText.cs" />
+    <Compile Include="Models\Recordings\SalesforceUser.cs" />
+    <Compile Include="Models\Salesforce\AcceptedEventRelation.cs" />
+    <Compile Include="Models\Salesforce\Account.cs" />
+    <Compile Include="Models\Salesforce\AccountCleanInfo.cs" />
+    <Compile Include="Models\Salesforce\AccountContactRole.cs" />
+    <Compile Include="Models\Salesforce\AccountFeed.cs" />
+    <Compile Include="Models\Salesforce\AccountHistory.cs" />
+    <Compile Include="Models\Salesforce\AccountPartner.cs" />
+    <Compile Include="Models\Salesforce\AccountShare.cs" />
+    <Compile Include="Models\Salesforce\ActivityHistory.cs" />
+    <Compile Include="Models\Salesforce\AdditionalNumber.cs" />
+    <Compile Include="Models\Salesforce\AggregateResult.cs" />
+    <Compile Include="Models\Salesforce\Announcement.cs" />
+    <Compile Include="Models\Salesforce\ApexClass.cs" />
+    <Compile Include="Models\Salesforce\ApexComponent.cs" />
+    <Compile Include="Models\Salesforce\ApexLog.cs" />
+    <Compile Include="Models\Salesforce\ApexPage.cs" />
+    <Compile Include="Models\Salesforce\ApexTestQueueItem.cs" />
+    <Compile Include="Models\Salesforce\ApexTestResult.cs" />
+    <Compile Include="Models\Salesforce\ApexTrigger.cs" />
+    <Compile Include="Models\Salesforce\AppMenuItem.cs" />
+    <Compile Include="Models\Salesforce\Asset.cs" />
+    <Compile Include="Models\Salesforce\AssetFeed.cs" />
+    <Compile Include="Models\Salesforce\AssetHistory.cs" />
+    <Compile Include="Models\Salesforce\AssetShare.cs" />
+    <Compile Include="Models\Salesforce\AssignmentRule.cs" />
+    <Compile Include="Models\Salesforce\AsyncApexJob.cs" />
+    <Compile Include="Models\Salesforce\AttachedContentDocument.cs" />
+    <Compile Include="Models\Salesforce\Attachment.cs" />
+    <Compile Include="Models\Salesforce\AuraDefinition.cs" />
+    <Compile Include="Models\Salesforce\AuraDefinitionBundle.cs" />
+    <Compile Include="Models\Salesforce\AuthConfig.cs" />
+    <Compile Include="Models\Salesforce\AuthConfigProviders.cs" />
+    <Compile Include="Models\Salesforce\AuthProvider.cs" />
+    <Compile Include="Models\Salesforce\AuthSession.cs" />
+    <Compile Include="Models\Salesforce\BrandTemplate.cs" />
+    <Compile Include="Models\Salesforce\BusinessHours.cs" />
+    <Compile Include="Models\Salesforce\BusinessProcess.cs" />
+    <Compile Include="Models\Salesforce\CallCenter.cs" />
+    <Compile Include="Models\Salesforce\Campaign.cs" />
+    <Compile Include="Models\Salesforce\CampaignFeed.cs" />
+    <Compile Include="Models\Salesforce\CampaignMember.cs" />
+    <Compile Include="Models\Salesforce\CampaignMemberStatus.cs" />
+    <Compile Include="Models\Salesforce\CampaignShare.cs" />
+    <Compile Include="Models\Salesforce\Case.cs" />
+    <Compile Include="Models\Salesforce\CaseComment.cs" />
+    <Compile Include="Models\Salesforce\CaseContactRole.cs" />
+    <Compile Include="Models\Salesforce\CaseFeed.cs" />
+    <Compile Include="Models\Salesforce\CaseHistory.cs" />
+    <Compile Include="Models\Salesforce\CaseShare.cs" />
+    <Compile Include="Models\Salesforce\CaseSolution.cs" />
+    <Compile Include="Models\Salesforce\CaseStatus.cs" />
+    <Compile Include="Models\Salesforce\CaseTeamMember.cs" />
+    <Compile Include="Models\Salesforce\CaseTeamRole.cs" />
+    <Compile Include="Models\Salesforce\CaseTeamTemplate.cs" />
+    <Compile Include="Models\Salesforce\CaseTeamTemplateMember.cs" />
+    <Compile Include="Models\Salesforce\CaseTeamTemplateRecord.cs" />
+    <Compile Include="Models\Salesforce\CategoryData.cs" />
+    <Compile Include="Models\Salesforce\CategoryNode.cs" />
+    <Compile Include="Models\Salesforce\ChatterActivity.cs" />
+    <Compile Include="Models\Salesforce\ClientBrowser.cs" />
+    <Compile Include="Models\Salesforce\CollaborationGroup.cs" />
+    <Compile Include="Models\Salesforce\CollaborationGroupFeed.cs" />
+    <Compile Include="Models\Salesforce\CollaborationGroupMember.cs" />
+    <Compile Include="Models\Salesforce\CollaborationGroupMemberRequest.cs" />
+    <Compile Include="Models\Salesforce\CollaborationGroupRecord.cs" />
+    <Compile Include="Models\Salesforce\CollaborationInvitation.cs" />
+    <Compile Include="Models\Salesforce\CombinedAttachment.cs" />
+    <Compile Include="Models\Salesforce\Community.cs" />
+    <Compile Include="Models\Salesforce\Contact.cs" />
+    <Compile Include="Models\Salesforce\ContactCleanInfo.cs" />
+    <Compile Include="Models\Salesforce\ContactFeed.cs" />
+    <Compile Include="Models\Salesforce\ContactHistory.cs" />
+    <Compile Include="Models\Salesforce\ContactShare.cs" />
+    <Compile Include="Models\Salesforce\ContentDistribution.cs" />
+    <Compile Include="Models\Salesforce\ContentDistributionView.cs" />
+    <Compile Include="Models\Salesforce\ContentDocument.cs" />
+    <Compile Include="Models\Salesforce\ContentDocumentFeed.cs" />
+    <Compile Include="Models\Salesforce\ContentDocumentHistory.cs" />
+    <Compile Include="Models\Salesforce\ContentDocumentLink.cs" />
+    <Compile Include="Models\Salesforce\ContentVersion.cs" />
+    <Compile Include="Models\Salesforce\ContentVersionHistory.cs" />
+    <Compile Include="Models\Salesforce\ContentWorkspace.cs" />
+    <Compile Include="Models\Salesforce\ContentWorkspaceDoc.cs" />
+    <Compile Include="Models\Salesforce\Contract.cs" />
+    <Compile Include="Models\Salesforce\ContractContactRole.cs" />
+    <Compile Include="Models\Salesforce\ContractFeed.cs" />
+    <Compile Include="Models\Salesforce\ContractHistory.cs" />
+    <Compile Include="Models\Salesforce\ContractStatus.cs" />
+    <Compile Include="Models\Salesforce\CorsWhitelistEntry.cs" />
+    <Compile Include="Models\Salesforce\CronJobDetail.cs" />
+    <Compile Include="Models\Salesforce\CronTrigger.cs" />
+    <Compile Include="Models\Salesforce\CustomObjectUserLicenseMetrics.cs" />
+    <Compile Include="Models\Salesforce\CustomPermission.cs" />
+    <Compile Include="Models\Salesforce\CustomPermissionDependency.cs" />
+    <Compile Include="Models\Salesforce\DandBCompany.cs" />
+    <Compile Include="Models\Salesforce\Dashboard.cs" />
+    <Compile Include="Models\Salesforce\DashboardComponent.cs" />
+    <Compile Include="Models\Salesforce\DashboardComponentFeed.cs" />
+    <Compile Include="Models\Salesforce\DashboardFeed.cs" />
+    <Compile Include="Models\Salesforce\DatacloudCompany.cs" />
+    <Compile Include="Models\Salesforce\DatacloudContact.cs" />
+    <Compile Include="Models\Salesforce\DatacloudDandBCompany.cs" />
+    <Compile Include="Models\Salesforce\DatacloudOwnedEntity.cs" />
+    <Compile Include="Models\Salesforce\DatacloudPurchaseUsage.cs" />
+    <Compile Include="Models\Salesforce\DatacloudSocialHandle.cs" />
+    <Compile Include="Models\Salesforce\DcSocialProfile.cs" />
+    <Compile Include="Models\Salesforce\DcSocialProfileHandle.cs" />
+    <Compile Include="Models\Salesforce\DeclinedEventRelation.cs" />
+    <Compile Include="Models\Salesforce\Document.cs" />
+    <Compile Include="Models\Salesforce\DocumentAttachmentMap.cs" />
+    <Compile Include="Models\Salesforce\Domain.cs" />
+    <Compile Include="Models\Salesforce\DomainSite.cs" />
+    <Compile Include="Models\Salesforce\DuplicateRecordItem.cs" />
+    <Compile Include="Models\Salesforce\DuplicateRecordSet.cs" />
+    <Compile Include="Models\Salesforce\DuplicateRule.cs" />
+    <Compile Include="Models\Salesforce\EmailDomainKey.cs" />
+    <Compile Include="Models\Salesforce\EmailServicesAddress.cs" />
+    <Compile Include="Models\Salesforce\EmailServicesFunction.cs" />
+    <Compile Include="Models\Salesforce\EmailStatus.cs" />
+    <Compile Include="Models\Salesforce\EmailTemplate.cs" />
+    <Compile Include="Models\Salesforce\EntitySubscription.cs" />
+    <Compile Include="Models\Salesforce\Event.cs" />
+    <Compile Include="Models\Salesforce\EventFeed.cs" />
+    <Compile Include="Models\Salesforce\EventLogFile.cs" />
+    <Compile Include="Models\Salesforce\EventRelation.cs" />
+    <Compile Include="Models\Salesforce\ExternalDataSource.cs" />
+    <Compile Include="Models\Salesforce\ExternalDataUserAuth.cs" />
+    <Compile Include="Models\Salesforce\FeedComment.cs" />
+    <Compile Include="Models\Salesforce\FeedItem.cs" />
+    <Compile Include="Models\Salesforce\FeedLike.cs" />
+    <Compile Include="Models\Salesforce\FeedPollChoice.cs" />
+    <Compile Include="Models\Salesforce\FeedPollVote.cs" />
+    <Compile Include="Models\Salesforce\FeedTrackedChange.cs" />
+    <Compile Include="Models\Salesforce\FieldPermissions.cs" />
+    <Compile Include="Models\Salesforce\FiscalYearSettings.cs" />
+    <Compile Include="Models\Salesforce\Folder.cs" />
+    <Compile Include="Models\Salesforce\ForecastShare.cs" />
+    <Compile Include="Models\Salesforce\Group.cs" />
+    <Compile Include="Models\Salesforce\GroupMember.cs" />
+    <Compile Include="Models\Salesforce\HashtagDefinition.cs" />
+    <Compile Include="Models\Salesforce\Holiday.cs" />
+    <Compile Include="Models\Salesforce\Idea.cs" />
+    <Compile Include="Models\Salesforce\IdeaComment.cs" />
+    <Compile Include="Models\Salesforce\InstalledMobileApp.cs" />
+    <Compile Include="Models\Salesforce\KnowledgeableUser.cs" />
+    <Compile Include="Models\Salesforce\Lead.cs" />
+    <Compile Include="Models\Salesforce\LeadCleanInfo.cs" />
+    <Compile Include="Models\Salesforce\LeadFeed.cs" />
+    <Compile Include="Models\Salesforce\LeadHistory.cs" />
+    <Compile Include="Models\Salesforce\LeadShare.cs" />
+    <Compile Include="Models\Salesforce\LeadStatus.cs" />
+    <Compile Include="Models\Salesforce\ListView.cs" />
+    <Compile Include="Models\Salesforce\LoginHistory.cs" />
+    <Compile Include="Models\Salesforce\LoginIp.cs" />
+    <Compile Include="Models\Salesforce\LookedUpFromActivity.cs" />
+    <Compile Include="Models\Salesforce\Macro.cs" />
+    <Compile Include="Models\Salesforce\MacroHistory.cs" />
+    <Compile Include="Models\Salesforce\MacroShare.cs" />
+    <Compile Include="Models\Salesforce\MailmergeTemplate.cs" />
+    <Compile Include="Models\Salesforce\MobileDeviceRegistrar.cs" />
+    <Compile Include="Models\Salesforce\Name.cs" />
+    <Compile Include="Models\Salesforce\Note.cs" />
+    <Compile Include="Models\Salesforce\NoteAndAttachment.cs" />
+    <Compile Include="Models\Salesforce\OauthToken.cs" />
+    <Compile Include="Models\Salesforce\ObjectPermissions.cs" />
+    <Compile Include="Models\Salesforce\OpenActivity.cs" />
+    <Compile Include="Models\Salesforce\Opportunity.cs" />
+    <Compile Include="Models\Salesforce\OpportunityCompetitor.cs" />
+    <Compile Include="Models\Salesforce\OpportunityContactRole.cs" />
+    <Compile Include="Models\Salesforce\OpportunityFeed.cs" />
+    <Compile Include="Models\Salesforce\OpportunityFieldHistory.cs" />
+    <Compile Include="Models\Salesforce\OpportunityHistory.cs" />
+    <Compile Include="Models\Salesforce\OpportunityLineItem.cs" />
+    <Compile Include="Models\Salesforce\OpportunityPartner.cs" />
+    <Compile Include="Models\Salesforce\OpportunityShare.cs" />
+    <Compile Include="Models\Salesforce\OpportunityStage.cs" />
+    <Compile Include="Models\Salesforce\Order.cs" />
+    <Compile Include="Models\Salesforce\OrderFeed.cs" />
+    <Compile Include="Models\Salesforce\OrderHistory.cs" />
+    <Compile Include="Models\Salesforce\OrderItem.cs" />
+    <Compile Include="Models\Salesforce\OrderItemFeed.cs" />
+    <Compile Include="Models\Salesforce\OrderItemHistory.cs" />
+    <Compile Include="Models\Salesforce\Organization.cs" />
+    <Compile Include="Models\Salesforce\OrgWideEmailAddress.cs" />
+    <Compile Include="Models\Salesforce\OwnedContentDocument.cs" />
+    <Compile Include="Models\Salesforce\PackageLicense.cs" />
+    <Compile Include="Models\Salesforce\Partner.cs" />
+    <Compile Include="Models\Salesforce\PartnerRole.cs" />
+    <Compile Include="Models\Salesforce\Period.cs" />
+    <Compile Include="Models\Salesforce\PermissionSet.cs" />
+    <Compile Include="Models\Salesforce\PermissionSetAssignment.cs" />
+    <Compile Include="Models\Salesforce\PermissionSetLicense.cs" />
+    <Compile Include="Models\Salesforce\PermissionSetLicenseAssign.cs" />
+    <Compile Include="Models\Salesforce\PlatformAction.cs" />
+    <Compile Include="Models\Salesforce\Pricebook2.cs" />
+    <Compile Include="Models\Salesforce\Pricebook2History.cs" />
+    <Compile Include="Models\Salesforce\PricebookEntry.cs" />
+    <Compile Include="Models\Salesforce\ProcessDefinition.cs" />
+    <Compile Include="Models\Salesforce\ProcessInstance.cs" />
+    <Compile Include="Models\Salesforce\ProcessInstanceHistory.cs" />
+    <Compile Include="Models\Salesforce\ProcessInstanceNode.cs" />
+    <Compile Include="Models\Salesforce\ProcessInstanceStep.cs" />
+    <Compile Include="Models\Salesforce\ProcessInstanceWorkitem.cs" />
+    <Compile Include="Models\Salesforce\ProcessNode.cs" />
+    <Compile Include="Models\Salesforce\Product2.cs" />
+    <Compile Include="Models\Salesforce\Product2Feed.cs" />
+    <Compile Include="Models\Salesforce\Profile.cs" />
+    <Compile Include="Models\Salesforce\PushTopic.cs" />
+    <Compile Include="Models\Salesforce\QueueSobject.cs" />
+    <Compile Include="Models\Salesforce\RecentlyViewed.cs" />
+    <Compile Include="Models\Salesforce\RecordType.cs" />
+    <Compile Include="Models\Salesforce\Report.cs" />
+    <Compile Include="Models\Salesforce\ReportFeed.cs" />
+    <Compile Include="Models\Salesforce\SamlSsoConfig.cs" />
+    <Compile Include="Models\Salesforce\Scontrol.cs" />
+    <Compile Include="Models\Salesforce\SearchPromotionRule.cs" />
+    <Compile Include="Models\Salesforce\SecureAgent.cs" />
+    <Compile Include="Models\Salesforce\SecureAgentPlugin.cs" />
+    <Compile Include="Models\Salesforce\SecureAgentPluginProperty.cs" />
+    <Compile Include="Models\Salesforce\SetupAuditTrail.cs" />
+    <Compile Include="Models\Salesforce\SetupEntityAccess.cs" />
+    <Compile Include="Models\Salesforce\Site.cs" />
+    <Compile Include="Models\Salesforce\SiteFeed.cs" />
+    <Compile Include="Models\Salesforce\SiteHistory.cs" />
+    <Compile Include="Models\Salesforce\Solution.cs" />
+    <Compile Include="Models\Salesforce\SolutionFeed.cs" />
+    <Compile Include="Models\Salesforce\SolutionHistory.cs" />
+    <Compile Include="Models\Salesforce\SolutionStatus.cs" />
+    <Compile Include="Models\Salesforce\StaticResource.cs" />
+    <Compile Include="Models\Salesforce\StreamingChannel.cs" />
+    <Compile Include="Models\Salesforce\StreamingChannelShare.cs" />
+    <Compile Include="Models\Salesforce\Task.cs" />
+    <Compile Include="Models\Salesforce\TaskFeed.cs" />
+    <Compile Include="Models\Salesforce\TaskPriority.cs" />
+    <Compile Include="Models\Salesforce\TaskStatus.cs" />
+    <Compile Include="Models\Salesforce\TenantUsageEntitlement.cs" />
+    <Compile Include="Models\Salesforce\ThirdPartyAccountLink.cs" />
+    <Compile Include="Models\Salesforce\Topic.cs" />
+    <Compile Include="Models\Salesforce\TopicAssignment.cs" />
+    <Compile Include="Models\Salesforce\TopicFeed.cs" />
+    <Compile Include="Models\Salesforce\UndecidedEventRelation.cs" />
+    <Compile Include="Models\Salesforce\User.cs" />
+    <Compile Include="Models\Salesforce\UserFeed.cs" />
+    <Compile Include="Models\Salesforce\UserLicense.cs" />
+    <Compile Include="Models\Salesforce\UserListView.cs" />
+    <Compile Include="Models\Salesforce\UserListViewCriterion.cs" />
+    <Compile Include="Models\Salesforce\UserLogin.cs" />
+    <Compile Include="Models\Salesforce\UserPackageLicense.cs" />
+    <Compile Include="Models\Salesforce\UserPreference.cs" />
+    <Compile Include="Models\Salesforce\UserProvisioningRequest.cs" />
+    <Compile Include="Models\Salesforce\UserProvisioningRequestShare.cs" />
+    <Compile Include="Models\Salesforce\UserRecordAccess.cs" />
+    <Compile Include="Models\Salesforce\UserRole.cs" />
+    <Compile Include="Models\Salesforce\UserShare.cs" />
+    <Compile Include="Models\Salesforce\Vehicle__c.cs" />
+    <Compile Include="Models\Salesforce\Vehicle__Feed.cs" />
+    <Compile Include="Models\Salesforce\Vote.cs" />
+    <Compile Include="Models\Salesforce\WebLink.cs" />
+    <Compile Include="Models\ViewModels\ContactViewModels.cs" />
+    <Compile Include="Models\ViewModels\EventViewModels.cs" />
+    <Compile Include="Models\ViewModels\LeadViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Secrets.cs" />
+    <Compile Include="Service References\Salesforce\SalesforceOAuthRedirectHandler.cs" />
+    <Compile Include="Service References\Salesforce\SalesforceService.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Scripts\jquery-2.2.0.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.2.0.js" />
+    <Content Include="Scripts\jquery-2.2.0.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Service References\Salesforce\ConnectedService.json" />
+    <Content Include="Views\Contacts\Index.cshtml" />
+    <Content Include="Views\Contacts\Details.cshtml" />
+    <Content Include="Views\Contacts\Edit.cshtml" />
+    <Content Include="Views\Contacts\Delete.cshtml" />
+    <Content Include="Views\Contacts\Create.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\Record\Index.cshtml" />
+    <Content Include="Views\Record\Record.cshtml" />
+    <Content Include="Views\Recordings\Create.cshtml" />
+    <Content Include="Views\Recordings\Delete.cshtml" />
+    <Content Include="Views\Recordings\Details.cshtml" />
+    <Content Include="Views\Recordings\Edit.cshtml" />
+    <Content Include="Views\Recordings\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-2.2.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602011505108_initial.resx">
+      <DependentUpon>201602011505108_initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2734</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2734/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

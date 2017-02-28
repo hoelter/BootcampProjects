@@ -1,0 +1,57 @@
+﻿<Window x:Class="VacationUI.AdminMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VacationUI"
+        mc:Ignorable="d"
+        Title="Vacation Manager  /  Admin Menu" Height="400" Width="500">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="work-vacation-policy-pop_3122 - Copy (2).jpg"/>
+        </Grid.Background>
+        <Button x:Name="addEmployees" FontSize="12" FontFamily="Segoe WP Black" Content="Add Employees" HorizontalAlignment="Left" Margin="61,190,0,0" VerticalAlignment="Top" Width="185" Click="addEmployees_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="addDepartments" FontSize="12" FontFamily="Segoe WP Black" Content="Add Departments" HorizontalAlignment="Left" Margin="61,163,0,0" VerticalAlignment="Top" Width="185" Click="addDepartments_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="approveVacations" FontSize="12" FontFamily="Segoe WP Black" Content="Approve Vacations" HorizontalAlignment="Left" Margin="251,190,0,0" VerticalAlignment="Top" Width="185" Click="approveVacations_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="vacationRequest" FontSize="12" FontFamily="Segoe WP Black" Content="Submit Vacation Request" HorizontalAlignment="Left" Margin="251,163,0,0" VerticalAlignment="Top" Width="185" Click="vacationRequest_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="exitToLogin" FontSize="12" FontFamily="Segoe WP Black" Content="Exit" HorizontalAlignment="Left" Margin="427,10,0,0" VerticalAlignment="Top" Width="55" Click="exitToLogin_Click">
+        </Button>
+
+    </Grid>
+</Window>

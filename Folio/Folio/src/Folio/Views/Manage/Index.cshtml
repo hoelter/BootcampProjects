@@ -1,0 +1,29 @@
+﻿@model IndexViewModel
+@{
+    ViewData["Title"] = "Manage your account";
+}
+
+<h2>@ViewData["Title"].</h2>
+<p class="text-success">@ViewData["StatusMessage"]</p>
+<div>
+    <h4>Change your account settings</h4>
+    <hr />
+    <p>@if (Model.HasPassword)
+            {
+        <a asp-controller="Manage" asp-action="ChangePassword">Change Your Password</a>
+    }
+    else
+    {
+        <a asp-controller="Manage" asp-action="SetPassword">Create Your Password</a>
+    }</p>
+    <p>
+        @if (Model.PortfolioNames.Count() == 0)
+            {
+            <a asp-controller="Portfolios" asp-action="Create">Add a Portfolio</a>
+        }
+        else
+        {
+            <a asp-controller="Portfolios" asp-action="Index">Manage Your Portfolios</a>
+        }
+    </p>
+</div>

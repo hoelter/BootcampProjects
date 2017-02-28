@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DCC NLP</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+	<header>
+		<div class="container">
+        <a href="index"><h1 class ="logo">devCodeCamp</h1></a>
+        	<strong>
+        		<nav>
+				<ul class="menu">
+					<li><a href="index">Home</a></li>
+					<li><a href="quote">Quote</a></li>
+				</ul>
+				</nav>
+			</strong>
+		</div>
+	</header>
+
+	<div class="jumbo">
+		<h3>Natural Language Processing Project</h3>
+        {% block page_title %}
+        {% endblock %}
+	</div>
+
+	<div class="container">
+    	{% block form %}
+    	{% endblock %} 
+
+		<div class="main-content">
+   		{% block main_content %}
+		{% endblock %}
+		</div>
+
+		<footer>
+			<p>devCodeCamp &copy; - 2015</p>
+		</footer>
+    </div>
+</body>
+</html>

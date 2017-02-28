@@ -1,0 +1,224 @@
+﻿html{
+  position:relative; 
+  min-height: 100%;
+}
+
+body {
+    background-image: url("../images/GreySignature.png");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-weight: bold;
+    margin-bottom: 70px;
+    margin-top: 100px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:30px;
+    background-color:darkgrey;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+button{
+    background-color: white;
+    color: steelblue;
+}
+.body-content {
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.darkgray{
+    color:darkgray;
+}
+.blue{
+    color:blue;
+}
+.red{
+    color:red;
+}
+.lightgray{
+    color:lightgray;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+select {
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    cursor:pointer;
+    width: 100%;
+}
+
+.stock-input {
+    display: block;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 18px;
+    box-shadow: none;
+    padding: 10px;
+    border: solid 1px #ccc;
+    transition: box-shadow 0.3s, border 0.3s;
+}
+
+.portfolio-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	/*background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);*/
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+	background-color:#ffffff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+    margin-top: 20px;
+}
+.portfolio-button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	/*background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);*/
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+	background-color:#f6f6f6;
+}
+.portfolio-button:active {
+	position:relative;
+	top:1px;
+}
+.navbar {
+    background-color:darkgrey;
+    font-weight: bold;
+}
+.nav.navbar-nav.nav li a {
+    color: black;
+    font-weight: bold;
+}
+.nav.navbar-nav.nav li a:hover {
+    color: grey;
+    background-color:darkgrey;
+    font-weight: bold;
+}
+.navbar-header.nav a{
+    color: black;
+    font-weight: bold;
+}
+.navbar-brand{
+    color: black;
+    font-weight: bold;
+}
+.navbar-brand:hover{
+    color: grey;
+    background-color:darkgrey;
+    font-weight: bold;
+}
+.breezy{
+    color: white;
+    font-size: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.carousel-caption {
+    z-index: 10 !important;
+}
+
+    .carousel-caption p {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+@media (min-width: 768px) {
+    .carousel-caption {
+        z-index: 10 !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    .collapse-hidden{
+        display: none;
+    }
+}
+
+ /**
+ * hide menu items when NOT collapsed
+ */
+@media screen and (min-width: 768px){
+    .navbar-collapse.collapse.uncollapse-hidden{
+        display: none!important;
+    }
+}
+
+/**
+ * set the fore-color of text within navbar-toggle items
+ */
+.navbar-toggle {
+    color: black;
+    font-weight: bold;
+}
+.navbar-toggle:hover{
+    color: black;
+    background-color:grey;
+    font-weight: bold;
+}
+.dropdown-submenu:hover > a:after {
+    color: black;
+    background-color:darkgrey;
+    font-weight: bold;
+}
+.nav.navbar-nav {
+    color: black;
+    background-color: darkgrey;
+    font-weight: bold;
+}
+.div.index-title
+{
+    font-size:40px;
+    color: black;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    font-weight: 300;
+    background-color: #A9A9A9;
+}
+.table{
+    background-color:darkgrey;
+    color:gray;
+}

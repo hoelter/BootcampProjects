@@ -1,0 +1,38 @@
+@model IEnumerable<Folio.Models.Portfolio>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="darkgray">Portfolios</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>Actions:</th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateCreated)
+        </td>
+        <td>
+            <a asp-action="Details" asp-route-id="@item.ID">@item.Name</a>
+        </td>
+        <td>
+            <a asp-action="AddStock" asp-route-id="@item.ID">Add Stock</a> |
+            <a asp-action="DeleteStock" asp-route-id="@item.ID">Delete Stock</a> |
+            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+        </td>
+    </tr>
+}
+</table>

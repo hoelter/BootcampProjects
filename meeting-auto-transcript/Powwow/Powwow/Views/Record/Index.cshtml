@@ -1,0 +1,81 @@
+﻿@model Powwow.Models.ViewModels.RecordingTargetSelection
+@{
+    ViewBag.Title = "Index";
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+        $(document).ready(function () {
+            $("#btnContact").click(function () {
+                $(".contacts").toggle();
+            });
+        });
+
+        $(document).ready(function () {
+            $("#btnLead").click(function () {
+                $(".leads").toggle();
+            });
+        });
+</script>
+<h2>Index</h2>
+
+<button id="btnContact">Show Contacts</button>
+<button id="btnLead">Show Leads</button>
+@using (Html.BeginForm("IndexSelection", "Record"))
+{
+    @Html.AntiForgeryToken()
+    <h3>Please Select Any Contacts Or Leads Involved In Recording</h3>
+    <div class="form-group">
+
+        <div class="col-md-offset-8 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    </div>
+ 
+   <h4 class="contacts" style="display:none">Contacts</h4>
+    <table class="table, contacts" style="display:none">
+        <tr>
+            @{
+                int count = 0;
+                foreach (var contact in Model.Contacts)
+                {
+                    if (count++ % 3 == 0)
+                    {
+                        @:</tr><tr>
+                    }
+                    @:<td>
+                        <input type="checkbox"
+                               name="selectedContacts"
+                               value="@contact.Id"
+                               @(Html.Raw(contact.IsSelected ? "checked=\"checked\"" : "")) />
+                        @Html.DisplayFor(modelContact => contact.Name)
+                    @:</td>
+                }
+                @:</tr>
+            }
+    </table>
+    <h4 class ="leads" style="display:none">Leads</h4>
+    <table class="table, leads" style="display:none">
+        <tr>
+            @{
+                int count2 = 0;
+                foreach (var lead in Model.Leads)
+                {
+                    if (count2++ % 3 == 0)
+                    {
+                        @:</tr><tr>
+                    }
+                    @:<td>
+                        <input type="checkbox"
+                               name="selectedLeads"
+                               value="@lead.Id"
+                               @(Html.Raw(lead.IsSelected ? "checked=\"checked\"" : "")) />
+                        @Html.DisplayFor(modelLead => lead.Name)
+                    @:</td>
+                }
+                @:</tr>
+            }
+     </table>
+}
