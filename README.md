@@ -1,2 +1,2 @@
 # BootcampProjects
-Projects I worked on for and while at a coding bootcamp.
+Projects I worked on while at a coding bootcamp.
